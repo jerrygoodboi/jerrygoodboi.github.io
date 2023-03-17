@@ -1,8 +1,65 @@
+<!DOCTYPE html>
 <html>
-	<body bgcolor=black>
-<video width="320" height="240" controls>
-	  <source src="rick.mp4" type="video/mp4">
-	    Your browser does not support the video tag.
-</video>
-	</body>
+<head>
+	<title>Accept Terms and Play Video</title>
+	<style>
+		#accept-button, #decline-button {
+			display: block;
+			margin: 0 auto;
+			padding: 10px 20px;
+			font-size: 16px;
+			border-radius: 5px;
+			color: white;
+			cursor: pointer;
+		}
+
+		#accept-button {
+			background-color: green;
+		}
+
+		#decline-button {
+			background-color: red;
+		}
+
+		#video-container {
+			display: none;
+			margin: 0 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body bgcolor="black">
+	<div id="content" style="text-align: center; color: white;">
+		<h1>Welcome to Jerry's website</h1>
+		<p>Please accept the cookies to view the content</p>
+		<button id="accept-button">Accept</button>
+		<button id="decline-button">Decline</button>
+	</div>
+
+	<div id="video-container">
+		<video>
+		  <source src="rick.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		</video>
+	</div>
+
+	<script>
+		var acceptButton = document.getElementById("accept-button");
+		var declineButton = document.getElementById("decline-button");
+		var videoContainer = document.getElementById("video-container");
+		var video = videoContainer.querySelector("video");
+
+		acceptButton.addEventListener("click", function() {
+			document.getElementById("content").style.display = "none";
+			videoContainer.style.display = "block";
+			video.play();
+		});
+
+		declineButton.addEventListener("click", function() {
+			document.getElementById("content").style.display = "none";
+			videoContainer.style.display = "block";
+			video.play();
+		});
+	</script>
+</body>
 </html>
