@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+		body {
+			color: white;
+		}
+	</style>
 	<title>Benk</title>
 	<script>
 		function search() {
@@ -35,8 +40,9 @@
 		}
 	</script>
 </head>
-<body>
-	<label for="search">Username to search:</label>
+<body bgcolor=black align=center>
+<label for="search" style="color: white;">Username:</label>
+
 	<input type="text" id="search">
 	<button onclick="search()">Search</button>
 	<p id="result"></p>
