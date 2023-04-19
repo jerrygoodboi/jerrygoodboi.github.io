@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JSON Example</title>
+	<title>Benk</title>
 	<script>
 		function search() {
 			// Get the search term entered by the user
@@ -18,8 +18,11 @@
 					var result = "";
 					for (var i = 0; i < data.length; i++) {
 						if (data[i].name.toLowerCase() == searchTerm.toLowerCase()) {
-							result = data[i].name + ":<br> Balance : " + data[i].Balance;
+							result = data[i].name.toUpperCase() + ":<br> Balance : " + data[i].Balance;
 							break;
+						}
+						else {
+						result = "Invalid Username"
 						}
 					}
 
@@ -33,7 +36,7 @@
 	</script>
 </head>
 <body>
-	<label for="search">Enter a name to search:</label>
+	<label for="search">Username to search:</label>
 	<input type="text" id="search">
 	<button onclick="search()">Search</button>
 	<p id="result"></p>
