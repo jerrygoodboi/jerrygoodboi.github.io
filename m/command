@@ -1,0 +1,1 @@
+sed -i "1s/\]$/,{ \"name\": \"$1\", \"Balance\": $2}\]/" data.json

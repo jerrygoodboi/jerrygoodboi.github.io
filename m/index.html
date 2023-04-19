@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Example</title>
+	<script>
+		function search() {
+			// Get the search term entered by the user
+			var searchTerm = document.getElementById("search").value;
+
+			// Load the JSON data from the file
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					// Parse the JSON data
+					var data = JSON.parse(this.responseText);
+
+					// Search for the matching entry in the data
+					var result = "";
+					for (var i = 0; i < data.length; i++) {
+						if (data[i].name.toLowerCase() == searchTerm.toLowerCase()) {
+							result = data[i].name + ":<br> Balance : " + data[i].Balance;
+							break;
+						}
+					}
+
+					// Display the result
+					document.getElementById("result").innerHTML = result;
+				}
+			};
+			xhr.open("GET", "data.json", true);
+			xhr.send();
+		}
+	</script>
+</head>
+<body>
+	<label for="search">Enter a name to search:</label>
+	<input type="text" id="search">
+	<button onclick="search()">Search</button>
+	<p id="result"></p>
+</body>
+</html>
+
