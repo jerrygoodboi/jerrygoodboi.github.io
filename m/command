@@ -1,1 +1,4 @@
 sed -i "1s/\]$/,{ \"name\": \"$1\", \"Balance\": $2}\]/" data.json
+git add data.json
+git commit -m "auto"
+git push origin main
