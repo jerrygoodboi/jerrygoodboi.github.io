@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Scale Detector</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <h1>Live Scale Detector</h1>
+      <button id="theme-switch"><span class="icon sun-icon">☀️</span><span class="icon moon-icon" style="display:none;">🌙</span></button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="pitch-detector">
+      <div class="note-container">
+        <div class="note">Note: --</div>
+      </div>
+      <div id="recent-notes-container" class="info-container">
+        <h2>Recent Notes</h2>
+        <ul id="recent-notes"></ul>
+      </div>
+      <div id="scale-container" class="info-container">
+          <h2>Detected Scale</h2>
+          <div id="scale">--</div>
+          <div id="scale-confidence">Confidence: 0%</div>
+          <div id="candidate-scales"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://github.com/jerrygoodboi" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/jerry-ron-sunny-296252211/" target="_blank">LinkedIn</a>
+      </div>
+      <p>&copy; 2025 Jerry Ron Sunny. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/pitch-detector.js"></script>
+</body>
+</html>
